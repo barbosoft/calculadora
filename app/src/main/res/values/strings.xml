@@ -1,3 +1,36 @@
 <resources>
-    <string name="app_name">Calculadora</string>
+    <string name="app_name">Calculadora Barbosoft</string>
+
+    <string name="mostraResultat">0</string>
+
+    <string name="history">History</string>
+    <string name="mides">Mides</string>
+    <string name="pro">PRO</string>
+    <string name="esborrar">Borrar</string>
+
+    <string name="netejar">C</string>
+    <string name="parentesis">()</string>
+    <string name="tantPerCent">%</string>
+    <string name="dividir">÷</string>
+
+    <string name="set">7</string>
+    <string name="vuit">8</string>
+    <string name="nou">9</string>
+    <string name="multiplicar">X</string>
+
+    <string name="quatre">4</string>
+    <string name="cinc">5</string>
+    <string name="sis">6</string>
+    <string name="restar">-</string>
+
+    <string name="u">1</string>
+    <string name="dos">2</string>
+    <string name="tres">3</string>
+    <string name="sumar">+</string>
+
+    <string name="signe">+/-</string>
+    <string name="zero">0</string>
+    <string name="decimal">,</string>
+    <string name="resultat">=</string>
+
 </resources>

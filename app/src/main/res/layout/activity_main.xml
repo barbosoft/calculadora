@@ -7,92 +7,118 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtResultat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mostraResultat"
+            android:textAlignment="textEnd"
+            android:textSize="70sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="300dp"
         android:layout_marginBottom="16dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/button21"
+            android:id="@+id/btnHistory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button"
-            app:backgroundTint="@null"
-            android:background="@drawable/custom_button"/>
+            android:background="@drawable/custom_button"
+            android:text="@string/history"
+            app:backgroundTint="@null" />
 
         <Button
-            android:id="@+id/button22"
+            android:id="@+id/btnMides"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button"
-            app:backgroundTint="@null"
-            android:background="@drawable/custom_button"/>
+            android:background="@drawable/custom_button"
+            android:text="@string/mides"
+            app:backgroundTint="@null" />
 
         <Button
-            android:id="@+id/button25"
+            android:id="@+id/btnAvancat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button"
-            app:backgroundTint="@null"
-            android:background="@drawable/custom_button"/>
+            android:background="@drawable/custom_button"
+            android:text="@string/pro"
+            app:backgroundTint="@null" />
 
         <Button
-            android:id="@+id/button26"
+            android:id="@+id/btnEsborrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button"
-            app:backgroundTint="@null"
-            android:background="@drawable/custom_button"/>
+            android:background="@drawable/custom_button"
+            android:text="@string/esborrar"
+            android:onClick="esborrar"
+            app:backgroundTint="@null" />
     </LinearLayout>
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
+                android:id="@+id/btnNetejar"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="1"
+                android:text="@string/netejar"
+                android:onClick="netejar"
                 app:backgroundTint="@null" />
 
             <Button
-                android:id="@+id/button7"
-                android:layout_width="wrap_content"
+                android:id="@+id/btnParentesis"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="Button"
+                android:text="@string/parentesis"
                 app:backgroundTint="@null" />
 
             <Button
-                android:id="@+id/button8"
-                android:layout_width="wrap_content"
+                android:id="@+id/btnTantPerCent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="Button"
+                android:text="@string/tantPerCent"
                 app:backgroundTint="@null" />
 
             <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
+                android:id="@+id/btnDividir"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="Button"
+                android:text="@string/dividir"
+                android:onClick="dividir"
                 app:backgroundTint="@null" />
         </TableRow>
 
@@ -101,72 +127,43 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button9"
-                android:layout_width="wrap_content"
+                android:id="@+id/btn7"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="Button"
+                android:text="@string/set"
+                android:onClick="inserirSet"
                 app:backgroundTint="@null" />
 
             <Button
-                android:id="@+id/button10"
-                android:layout_width="wrap_content"
+                android:id="@+id/btn8"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="Button"
+                android:text="@string/vuit"
+                android:onClick="inserirVuit"
                 app:backgroundTint="@null" />
 
             <Button
-                android:id="@+id/button11"
-                android:layout_width="wrap_content"
+                android:id="@+id/btn9"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="Button"
+                android:text="@string/nou"
+                android:onClick="inserirNou"
                 app:backgroundTint="@null" />
 
             <Button
-                android:id="@+id/button12"
-                android:layout_width="wrap_content"
+                android:id="@+id/btnMultiplicar"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="Button"
-                app:backgroundTint="@null" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/button15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_button"
-                android:text="Button"
-                app:backgroundTint="@null" />
-
-            <Button
-                android:id="@+id/button16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_button"
-                android:text="Button"
-                app:backgroundTint="@null" />
-
-            <Button
-                android:id="@+id/button14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_button"
-                android:text="Button"
-                app:backgroundTint="@null" />
-
-            <Button
-                android:id="@+id/button13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_button"
-                android:text="Button"
+                android:text="@string/multiplicar"
+                android:onClick="multiplicar"
                 app:backgroundTint="@null" />
         </TableRow>
 
@@ -175,36 +172,133 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button19"
-                android:layout_width="wrap_content"
+                android:id="@+id/btn4"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="Button"
+                android:text="@string/quatre"
+                android:onClick="inserirQuatre"
                 app:backgroundTint="@null" />
 
             <Button
-                android:id="@+id/button18"
-                android:layout_width="wrap_content"
+                android:id="@+id/btn5"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="Button"
+                android:text="@string/cinc"
+                android:onClick="inserirCinc"
                 app:backgroundTint="@null" />
 
             <Button
-                android:id="@+id/button17"
-                android:layout_width="wrap_content"
+                android:id="@+id/btn6"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="Button"
+                android:text="@string/sis"
+                android:onClick="inserirSis"
                 app:backgroundTint="@null" />
 
             <Button
-                android:id="@+id/button20"
-                android:layout_width="wrap_content"
+                android:id="@+id/btnRestar"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="Button"
+                android:text="@string/restar"
+                android:onClick="restar"
+                app:backgroundTint="@null" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:text="@string/u"
+                android:onClick="inserirU"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:text="@string/dos"
+                android:onClick="inserirDos"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btn3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:text="@string/tres"
+                android:onClick="inserirTres"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnSumar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:text="@string/sumar"
+                android:onClick="sumar"
+                app:backgroundTint="@null" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnSigne"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:text="@string/signe"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btn0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:onClick="inserirZero"
+                android:text="@string/zero"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnDecimal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:text="@string/decimal"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnResultat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:text="@string/resultat"
+                android:onClick="resultat"
                 app:backgroundTint="@null" />
         </TableRow>
     </TableLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
