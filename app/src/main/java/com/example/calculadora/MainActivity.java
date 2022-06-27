@@ -3,7 +3,9 @@ package com.example.calculadora;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -14,31 +16,226 @@ public class MainActivity extends AppCompatActivity {
     Float numero1 = 0.0f;
     Float numero2 = 0.0f;
     String operador = "";
+    // Buttons
+    private Button buttonNumero0;
+    private Button buttonNumero1;
+    private Button buttonNumero2;
+    private Button buttonNumero3;
+    private Button buttonNumero4;
+    private Button buttonNumero5;
+    private Button buttonNumero6;
+    private Button buttonNumero7;
+    private Button buttonNumero8;
+    private Button buttonNumero9;
+    private Button buttonNetejar;
+    private Button buttonSumar;
+    private Button buttonRestar;
+    private Button buttonDividir;
+    private Button buttonMultiplicar;
     private Button buttonDecimal;
+    private Button buttonSigne;
+    private Button buttonEsborrar;
 
-    private boolean clickSeparadorDecimal;
+    // Condicionals booleans
+    private boolean clickSumar, clickRestar, clickMultiplicar, clickDividir, clickSeparadorDecimal, clickSigne;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         resultat = findViewById(R.id.txtResultat);
-        //valor = findViewById(R.id.txtResultat);
+        resultat.setFocusable(true);
+        resultat.setFocusableInTouchMode(true);
+        resultat.setInputType(InputType.TYPE_NULL);
+
+        // Button per els números
+        buttonNumero0 = findViewById(R.id.btn0);
+        buttonNumero0.setOnClickListener(view -> {
+
+            String resultatAnterior = resultat.getText().toString();
+            resultat.setText(resultatAnterior + "0");
+            accionsAdicionals (R.id.btn0);
+
+        });
+
+        buttonNumero1 = findViewById(R.id.btn1);
+        buttonNumero1.setOnClickListener(view -> {
+
+            String resultatAnterior = resultat.getText().toString();
+            resultat.setText(resultatAnterior + "1");
+            accionsAdicionals (R.id.btn1);
+
+        });
+
+        buttonNumero2 = findViewById(R.id.btn2);
+        buttonNumero2.setOnClickListener(view -> {
+
+            String resultatAnterior = resultat.getText().toString();
+            resultat.setText(resultatAnterior + "2");
+            accionsAdicionals (R.id.btn2);
+
+        });
+
+        buttonNumero3 = findViewById(R.id.btn3);
+        buttonNumero3.setOnClickListener(view -> {
+
+            String resultatAnterior = resultat.getText().toString();
+            resultat.setText(resultatAnterior + "3");
+            accionsAdicionals (R.id.btn3);
+
+        });
+
+        buttonNumero4 = findViewById(R.id.btn4);
+        buttonNumero4.setOnClickListener(view -> {
+
+            String resultatAnterior = resultat.getText().toString();
+            resultat.setText(resultatAnterior + "4");
+            accionsAdicionals (R.id.btn4);
+
+        });
+
+        buttonNumero5 = findViewById(R.id.btn5);
+        buttonNumero5.setOnClickListener(view -> {
+
+            String resultatAnterior = resultat.getText().toString();
+            resultat.setText(resultatAnterior + "5");
+            accionsAdicionals (R.id.btn5);
+
+        });
+
+        buttonNumero6 = findViewById(R.id.btn6);
+        buttonNumero6.setOnClickListener(view -> {
+
+            String resultatAnterior = resultat.getText().toString();
+            resultat.setText(resultatAnterior + "6");
+            accionsAdicionals (R.id.btn6);
+
+        });
+
+        buttonNumero7 = findViewById(R.id.btn7);
+        buttonNumero7.setOnClickListener(view -> {
+
+            String resultatAnterior = resultat.getText().toString();
+            resultat.setText(resultatAnterior + "7");
+            accionsAdicionals (R.id.btn7);
+
+        });
+
+        buttonNumero8 = findViewById(R.id.btn8);
+        buttonNumero8.setOnClickListener(view -> {
+
+            String resultatAnterior = resultat.getText().toString();
+            resultat.setText(resultatAnterior + "8");
+            accionsAdicionals (R.id.btn8);
+
+        });
+
+        buttonNumero9 = findViewById(R.id.btn9);
+        buttonNumero9.setOnClickListener(view -> {
+
+            String resultatAnterior = resultat.getText().toString();
+            resultat.setText(resultatAnterior + "9");
+            accionsAdicionals (R.id.btn9);
+
+        });
+
+        // Buttons Sumar, restar, Dividir i Multiplicar
+        buttonSumar = findViewById(R.id.btnSumar);
+        buttonSumar.setOnClickListener((view -> {
+            String resultatAnterior = resultat.getText().toString();
+            // Si abans hi havia algun valor concatenem
+            if (resultatAnterior.trim().length() > 0 && clickSumar == false) {
+                resultat.setText(resultatAnterior + "+");
+                clickSumar = true;
+                accionsAdicionals (R.id.btnSumar);
+            }
+
+        }));
+
+        buttonRestar = findViewById(R.id.btnRestar);
+        buttonRestar.setOnClickListener((view -> {
+            String resultatAnterior = resultat.getText().toString();
+            // Si abans hi havia algun valor concatenem
+            if (resultatAnterior.trim().length() > 0 && clickRestar == false) {
+                resultat.setText(resultatAnterior + "-");
+                clickRestar = true;
+                accionsAdicionals (R.id.btnRestar);
+            }
+
+        }));
+
+        buttonDividir = findViewById(R.id.btnDividir);
+        buttonDividir.setOnClickListener((view -> {
+            String resultatAnterior = resultat.getText().toString();
+            // Si abans hi havia algun valor concatenem
+            if (resultatAnterior.trim().length() > 0 && clickDividir == false) {
+                resultat.setText(resultatAnterior + "÷");
+                clickDividir = true;
+                accionsAdicionals (R.id.btnDividir);
+            }
+
+        }));
+
+        buttonMultiplicar = findViewById(R.id.btnMultiplicar);
+        buttonMultiplicar.setOnClickListener((view -> {
+            String resultatAnterior = resultat.getText().toString();
+            // Si abans hi havia algun valor concatenem
+            if (resultatAnterior.trim().length() > 0 && clickMultiplicar == false) {
+                resultat.setText(resultatAnterior + "x");
+                clickMultiplicar = true;
+                accionsAdicionals (R.id.btnMultiplicar);
+            }
+
+        }));
+
+        // Button Netejar C
+        buttonNetejar = findViewById(R.id.btnNetejar);
+        buttonNetejar.setOnClickListener(view -> {
+            resultat.setText("");
+            accionsAdicionals (R.id.btnNetejar);
+        });
+
+        // Button Esborrar <--
+        buttonEsborrar = findViewById(R.id.btnEsborrar);
+        buttonEsborrar.setOnClickListener(view -> {
+            String text = resultat.getText().toString();
+            resultat.setText(text.substring(0, text.length() -1));
+            accionsAdicionals (R.id.btnEsborrar);
+        });
+
 
         // Button per els decimals
-        buttonDecimal =  findViewById(R.id.btnDecimal);
-        buttonDecimal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        buttonDecimal = findViewById(R.id.btnDecimal);
+        buttonDecimal.setOnClickListener(view -> {
 
-                String textAnterior = resultat.getText().toString();
+            String resultatAnterior = resultat.getText().toString();
 
-                if (clickSeparadorDecimal == false) {
-                    resultat.setText(textAnterior + ".");
-                    clickSeparadorDecimal = true;
-                    accionsAdicionals (R.id.btnDecimal);
-                }
+            if (clickSeparadorDecimal == false) {
+                resultat.setText(resultatAnterior + ".");
+                clickSeparadorDecimal = true;
+                accionsAdicionals (R.id.btnDecimal);
             }
+        });
+
+        buttonSigne = findViewById(R.id.btnSigne);
+        buttonSigne.setOnClickListener(view -> {
+            String resultatAnterior = resultat.getText().toString();
+            if (clickSigne == false) {
+                resultat.setText("-" + resultatAnterior);
+                clickSigne = true;
+                accionsAdicionals (R.id.btnSigne);
+
+            } else if (resultat.getText().toString().equals("-")) {
+                //String text = resultat.getText().toString();
+                resultat.setText(resultatAnterior.substring(0, resultatAnterior.length() -1));
+                resultat.setText(resultatAnterior);
+                clickSigne = true;
+                accionsAdicionals (R.id.btnSigne);
+            }
+
+
+            //accionsAdicionals (R.id.btnSigne);
+
         });
 
 
@@ -51,159 +248,40 @@ public class MainActivity extends AppCompatActivity {
     private void accionsAdicionals (int idButtonActual){
 
         //Falta realitzar
-        /*
-        if (idButtonActual != R.id.btnNumMes) {
-            clickSigneMes = false;
+
+        if (idButtonActual != R.id.btnSumar) {
+            clickSumar = false;
         }
 
-        if (idButtonActual != R.id.btnNumMenys) {
-            clickSigneMenys = false;
+        if (idButtonActual != R.id.btnRestar) {
+            clickRestar = false;
         }
 
         if (idButtonActual != R.id.btnMultiplicar) {
-            clickSigneMultiplicar = false;
+            clickMultiplicar = false;
         }
 
         if (idButtonActual != R.id.btnDividir) {
-            clickSigneDivisio = false;
+            clickDividir = false;
         }
-        */
-        if (idButtonActual != R.id.btnDecimal) {
-            clickSeparadorDecimal = false;
+
+        if (idButtonActual != R.id.btnSigne) {
+            clickSigne = false;
         }
-        //Realment hauria d'anar de la següent manera
-        /*
-        if (idButtonActual == R.id.btnNumMes
-                || idButtonActual == R.id.btnNumMenys
-                || idButtonActual == R.id.btnNumMultiplicar
-                || idButtonActual == R.id.btnNumDividir) {
+
+        if (idButtonActual == R.id.btnSumar
+                || idButtonActual == R.id.btnRestar
+                || idButtonActual == R.id.btnMultiplicar
+                || idButtonActual == R.id.btnDividir) {
 
                 clickSeparadorDecimal = false;
-
         }
-         */
 
 
 
-    }
-
-    public void inserirZero(View view) {
-        if (resultat.getText().toString().equals("0")) {
-            resultat.setText("0");
-        }else {
-            resultat.setText(resultat.getText() + "0");
-        }
-    }
-
-    public void inserirU(View view) {
-        if (resultat.getText().toString().equals("0")) {
-            resultat.setText("1");
-        }else {
-            resultat.setText(resultat.getText() + "1");
-        }
-    }
-
-    public void inserirDos(View view) {
-        if (resultat.getText().toString().equals("0")) {
-            resultat.setText("2");
-        }else {
-            resultat.setText(resultat.getText() + "2");
-        }
-    }
-
-    public void inserirTres(View view) {
-        if (resultat.getText().toString().equals("0")) {
-            resultat.setText("3");
-        }else {
-            resultat.setText(resultat.getText() + "3");
-        }
-    }
-
-    public void inserirQuatre(View view) {
-        if (resultat.getText().toString().equals("0")) {
-            resultat.setText("4");
-        }else {
-            resultat.setText(resultat.getText() + "4");
-        }
-    }
-
-    public void inserirCinc(View view) {
-        if (resultat.getText().toString().equals("0")) {
-            resultat.setText("5");
-        }else {
-            resultat.setText(resultat.getText() + "5");
-        }
-    }
-
-    public void inserirSis(View view) {
-        if (resultat.getText().toString().equals("0")) {
-            resultat.setText("6");
-        }else {
-            resultat.setText(resultat.getText() + "6");
-        }
-    }
-
-    public void inserirSet(View view) {
-        if (resultat.getText().toString().equals("0")) {
-            resultat.setText("7");
-        }else {
-            resultat.setText(resultat.getText() + "7");
-        }
-    }
-
-    public void inserirVuit(View view) {
-        if (resultat.getText().toString().equals("0")) {
-            resultat.setText("8");
-        }else {
-            resultat.setText(resultat.getText() + "8");
-        }
-    }
-
-    public void inserirNou(View view) {
-        if (resultat.getText().toString().equals("0")) {
-            resultat.setText("9");
-        }else {
-            resultat.setText(resultat.getText() + "9");
-        }
-    }
-
-    public void dividir(View view) {
-
-        operador = "÷";
-        desarNumero1(view);
 
     }
-
-    public void multiplicar (View view) {
-
-        operador = "X";
-        desarNumero1(view);
-
-    }
-
-    public void restar (View view) {
-
-        operador = "-";
-        desarNumero1(view);
-
-    }
-
-    public void sumar (View view) {
-
-        operador = "+";
-        desarNumero1(view);
-
-    }
-
-    public void netejar(View view) {
-
-        resultat.setText("0");
-        numero1 = 0.0f;
-        numero2 = 0.0f;
-        operador = "";
-
-    }
-
+/*
     public void desarNumero1(View view) {
 
         numero1 = Float.parseFloat(resultat.getText().toString());
@@ -221,10 +299,10 @@ public class MainActivity extends AppCompatActivity {
         if (length > 0) {
             resultat.getText().delete(length - 1, length);
         }
-        */
+
     }
-
-
+*/
+/*
     public void resultat(View view) {
 
         Float resultatFinal = 0.0f;
@@ -253,7 +331,7 @@ public class MainActivity extends AppCompatActivity {
         resultat.setText(resultatFinal.toString());
 
     }
-
+*/
 
 
 

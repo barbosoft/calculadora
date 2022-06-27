@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Calculadora Barbosoft</string>
 
-    <string name="mostraResultat">0</string>
+    <string name="mostraResultat"></string>
 
     <string name="history">History</string>
     <string name="mides">Mides</string>
     <string name="pro">PRO</string>
-    <string name="esborrar">Borrar</string>
+    <string name="esborrar"><![CDATA[<--]]></string>
 
     <string name="netejar">C</string>
     <string name="parentesis">()</string>
@@ -16,7 +16,7 @@
     <string name="set">7</string>
     <string name="vuit">8</string>
     <string name="nou">9</string>
-    <string name="multiplicar">X</string>
+    <string name="multiplicar">x</string>
 
     <string name="quatre">4</string>
     <string name="cinc">5</string>
