@@ -145,6 +145,14 @@ public class MainActivity extends AppCompatActivity {
             String resultatAnterior = resultat.getText().toString();
             // Si abans hi havia algun valor concatenem
             if (resultatAnterior.trim().length() > 0 && clickSumar == false) {
+
+                if (resultatAnterior.endsWith("x")
+                    || resultatAnterior.endsWith("÷")
+                        || resultatAnterior.endsWith("-")) {
+
+                    resultatAnterior = resultatAnterior.substring(0, resultatAnterior.length() -1);
+                    resultat.setText(resultatAnterior);
+                }
                 resultat.setText(resultatAnterior + "+");
                 clickSumar = true;
                 accionsAdicionals (R.id.btnSumar);
@@ -157,6 +165,15 @@ public class MainActivity extends AppCompatActivity {
             String resultatAnterior = resultat.getText().toString();
             // Si abans hi havia algun valor concatenem
             if (resultatAnterior.trim().length() > 0 && clickRestar == false) {
+
+                if (resultatAnterior.endsWith("x")
+                        || resultatAnterior.endsWith("÷")
+                        || resultatAnterior.endsWith("+")) {
+
+                    resultatAnterior = resultatAnterior.substring(0, resultatAnterior.length() -1);
+                    resultat.setText(resultatAnterior);
+                }
+
                 resultat.setText(resultatAnterior + "-");
                 clickRestar = true;
                 accionsAdicionals (R.id.btnRestar);
@@ -169,6 +186,15 @@ public class MainActivity extends AppCompatActivity {
             String resultatAnterior = resultat.getText().toString();
             // Si abans hi havia algun valor concatenem
             if (resultatAnterior.trim().length() > 0 && clickDividir == false) {
+
+                if (resultatAnterior.endsWith("x")
+                        || resultatAnterior.endsWith("+")
+                        || resultatAnterior.endsWith("-")) {
+
+                    resultatAnterior = resultatAnterior.substring(0, resultatAnterior.length() -1);
+                    resultat.setText(resultatAnterior);
+                }
+
                 resultat.setText(resultatAnterior + "÷");
                 clickDividir = true;
                 accionsAdicionals (R.id.btnDividir);
@@ -181,6 +207,15 @@ public class MainActivity extends AppCompatActivity {
             String resultatAnterior = resultat.getText().toString();
             // Si abans hi havia algun valor concatenem
             if (resultatAnterior.trim().length() > 0 && clickMultiplicar == false) {
+
+                if (resultatAnterior.endsWith("+")
+                        || resultatAnterior.endsWith("÷")
+                        || resultatAnterior.endsWith("-")) {
+
+                    resultatAnterior = resultatAnterior.substring(0, resultatAnterior.length() -1);
+                    resultat.setText(resultatAnterior);
+                }
+
                 resultat.setText(resultatAnterior + "x");
                 clickMultiplicar = true;
                 accionsAdicionals (R.id.btnMultiplicar);

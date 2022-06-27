@@ -44,7 +44,7 @@
         <Button
             android:id="@+id/btnHistory"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="61dp"
             android:layout_weight="1"
             android:background="@drawable/custom_button"
             android:text="@string/history"
